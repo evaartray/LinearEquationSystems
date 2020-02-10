@@ -21,7 +21,7 @@ namespace LinearEquationSystems
                 Console.Write("\nEnter number of equations: "); 
                 numberOfEq = int.Parse(Console.ReadLine());
 
-                SystemOfEquation newEquation = new SystemOfEquation(numberOfEq, numberOfEq);
+                SystemOfEquation newEquation = new SystemOfEquation(numberOfEq, numberOfEq+1);
                 newEquation.augMatrix.SetLinearEquationMatrix();
                 newEquation.DisplayEquation();
                 newEquation.DisplayX();
