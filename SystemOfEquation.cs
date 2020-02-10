@@ -35,7 +35,7 @@ namespace LinearEquationSystems
         public void DisplayEquation()
         {
             Console.Clear();
-            string[] variableArray = Enumerable.Repeat("X", nColumn).ToArray();
+            string[] variableArray = Enumerable.Repeat("X", augMatrix.nColumn).ToArray();
             Console.WriteLine("You have entered the following equation:");
             for (int i = 0; i < augMatrix.nRow; i++)
             {
@@ -43,24 +43,24 @@ namespace LinearEquationSystems
                 for (int j = 0; j < augMatrix.nColumn; j++)
                 {
                     //if adding x
-                    if (augMatrix.matrix[i, j] > 0 && j < (augMatrix.nColumn - 1) && j > 0)
+                    if (matrix[i, j] > 0 && j < (augMatrix.nColumn - 1) && j > 0)
                     {
-                        Console.Write("+ {0}*{1}{2} ", augMatrix.matrix[i, j], "X", j + 1);
+                        Console.Write("+ {0}*{1}{2} ", matrix[i, j], "X", j + 1);
                     }
                     //if subtracting x
-                    if (augMatrix.matrix[i, j] < 0 && j < (augMatrix.nColumn - 1) && j > 0)
+                    if (matrix[i, j] < 0 && j < (augMatrix.nColumn - 1) && j > 0)
                     {
-                        Console.Write("- {0}*{1}{2} ", Math.Abs(augMatrix.matrix[i, j]), "X", j + 1);
+                        Console.Write("- {0}*{1}{2} ", Math.Abs(matrix[i, j]), "X", j + 1);
                     }
                     //if number in the column is 0
                     if (j == 0)
                     {
-                        Console.Write("{0}*{1}{2} ", augMatrix.matrix[i, j], "X", j + 1);
+                        Console.Write("{0}*{1}{2} ", matrix[i, j], "X", j + 1);
                     }
                     //if number in the column is -1
                     if (j == (augMatrix.nColumn - 1))
                     {
-                        Console.Write("= {0}", augMatrix.matrix[i, j]);
+                        Console.Write("= {0}", matrix[i, j]);
                     }
                 }
                 Console.WriteLine();

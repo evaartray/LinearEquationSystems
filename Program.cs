@@ -8,7 +8,6 @@ namespace LinearEquationSystems
 {
     internal class Program
     {
-
         private static void Main(string[] args)
         {
             Console.WriteLine("Type linear equations in augmented matrix notation: a1 a2... aN d +" +
@@ -20,8 +19,8 @@ namespace LinearEquationSystems
             while (contin)
             {
                 Console.Write("\nEnter number of equations: "); 
-
                 numberOfEq = int.Parse(Console.ReadLine());
+
                 SystemOfEquation newEquation = new SystemOfEquation(numberOfEq, numberOfEq);
                 newEquation.augMatrix.SetLinearEquationMatrix();
                 newEquation.DisplayEquation();
